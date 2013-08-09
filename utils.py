@@ -6,7 +6,7 @@ def feature_names():
 def values(feature_name):
   conn = sqlite3.connect("data/data.sqlite")
   cur = conn.cursor()
-  result = cur.execute("SELECT %s from train" % feature_name)
+  result = cur.execute("SELECT DISTINCT %s from train" % feature_name)
   return cur
 
 def is_homogenous(values):
